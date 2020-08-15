@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcService.CustomerOnBoarding.Protos";
+
+service IntegrateCustomer {
+  rpc IntegrateCustomerData (CustomerIntegrationRequest) returns (CustomerIntegrationResult);
+}
+
+message CustomerIntegrationRequest {
+  string id = 1;
+  string name = 2;
+}
+
+message CustomerIntegrationResult {
+  bool succeeded = 1;
+}
